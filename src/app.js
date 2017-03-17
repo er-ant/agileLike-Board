@@ -1,6 +1,10 @@
-export function init(message) {
-  alert(message);
-}
+import { dataMock, statuses } from './data';
+import { Table } from './app/table';
+
+document.addEventListener('DOMContentLoaded', () => {
+  let table = new Table(dataMock, statuses);
+  document.getElementById('table-wrapper').appendChild(table.element);
+});
 
 // function allowDrop(ev) {
 //   ev.preventDefault();

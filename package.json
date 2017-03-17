@@ -1,6 +1,6 @@
 {
   "name": "agileLike-Board",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "public/dist/table.js",
   "scripts": {

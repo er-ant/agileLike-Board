@@ -1,4 +1,4 @@
-export default const dataMock = [
+export const dataMock = [
   {
     projName: 'MoneyMoneyMoney',
     projLink: 'https://www.yandex.ru/',
@@ -25,3 +25,5 @@ export default const dataMock = [
     inStatus: '7 hours 23 minutes'
   }
 ];
+
+export const statuses = 'TODO PREVIEW TEST FIX OFFER';
