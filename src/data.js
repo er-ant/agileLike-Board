@@ -6,15 +6,17 @@ export const dataMock = [
     country: 'United States of America',
     manager: 'O. Romanenko',
     status: 'TODO',
-    inStatus: '7 hours'
+    inStatus: '7 hours',
+    contact: 'tomorrow'
   }, {
     projName: 'Setting mark up for the agile',
     projLink: 'https://www.vk.com/',
     customer: 'Jojo Mogo Toggle',
     country: 'Jamaica',
     manager: 'V. Drogan',
-    status: 'PREVIEW',
-    inStatus: '0'
+    status: 'TODO',
+    inStatus: '0',
+    contact: 'today'
   }, {
     projName: 'DealerPoint JS update to ES7',
     projLink: 'https://learn.javascript.ru/',
@@ -22,7 +24,8 @@ export const dataMock = [
     country: 'Russian Federation',
     manager: 'O. Romanenko',
     status: 'TEST',
-    inStatus: '7 hours 23 minutes'
+    inStatus: '7 hours 23 minutes',
+    contact: 'now'
   }
 ];
 

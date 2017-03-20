@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -51,8 +51,21 @@
         </thead>
         <tbody>
           <tr>
-            <td class="deal-status-col" ondrop="drop(event)" ondragover="allowDrop(event)">
-              <div id="deal-number" class="deal overdue" draggable="true" ondragstart="drag(event)">
+            <td class="deal-status-col">
+              <div id="deal-number" class="deal overdue">
+                <p class="deal-header">
+                  <a href="" target="_blank"><strong>Project name</strong></a> <!-- имя проекта -->
+                </p>
+                <p class="attributes">
+                  <b>Клиент</b>: I. Kasparov<br>
+                  <b>Страна</b>: Russian Federation<br>
+                </p>
+                <p class="assigned-manager">
+                  <b>Менеджер</b>: O. Romanenko<br>
+                  <b>В статусе</b>: 7 часов<br>
+                </p>
+              </div>
+              <div class="deal unknown" ondrop="table.drop(event)" ondragover="table.allowDrop(event)">
                 <p class="deal-header">
                   <a href="" target="_blank"><strong>Project name</strong></a> <!-- имя проекта -->
                 </p>
@@ -66,26 +79,13 @@
                 </p>
               </div>
             </td>
-            <td class="deal-status-col" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <td class="deal-status-col" ondrop="table.drop(event)" ondragover="table.allowDrop(event)">
             </td>
-            <td class="deal-status-col" ondrop="drop(event)" ondragover="allowDrop(event)">
-            </td>
-            <td class="deal-status-col">
+            <td class="deal-status-col" ondrop="table.drop(event)" ondragover="table.allowDrop(event)">
             </td>
             <td class="deal-status-col">
-              <div class="deal unknown">
-                <p class="deal-header">
-                  <a href="" target="_blank"><strong>Project name</strong></a> <!-- имя проекта -->
-                </p>
-                <p class="attributes">
-                  <b>Клиент</b>: I. Kasparov<br>
-                  <b>Страна</b>: Russian Federation<br>
-                </p>
-                <p class="assigned-manager">
-                  <b>Менеджер</b>: O. Romanenko<br>
-                  <b>В статусе</b>: 7 часов<br>
-                </p>
-              </div>
+            </td>
+            <td class="deal-status-col">
             </td>
             <td class="deal-status-col">
             </td>

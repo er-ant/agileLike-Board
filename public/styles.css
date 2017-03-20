@@ -1,9 +1,9 @@
 table {
-    border: 1px solid #e4e4e4;
-    border-collapse: collapse;
-    margin-bottom: 4px;
-    table-layout: fixed;
-    width: 100%;
+  border: 1px solid #e4e4e4;
+  border-collapse: collapse;
+  margin-bottom: 4px;
+  table-layout: fixed;
+  width: 100%;
 }
 
 table tr th {
@@ -33,6 +33,10 @@ table thead tr th span.hours {
   float: right;
   font-size: 90%;
   font-weight: normal;
+}
+
+td {
+  vertical-align: top;
 }
 
 .deal-status-col {

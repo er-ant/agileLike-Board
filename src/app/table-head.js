@@ -2,20 +2,11 @@ export class TableHead {
   constructor(data, statuses) {
     this.data = {};
     this.element = document.createElement('thead');
-    this.statuses = statuses.split(' ');
+    this.statuses = statuses;
 
     this.parseData(data);
 
-    this._buildHeader(statuses);
-  }
-
-  _buildHeader(statuses) {
-    let headers = '';
-    this.statuses.forEach(status => {
-      headers += this.theadTemplate(status);
-    })
-
-    this.element.innerHTML = headers;
+    this._buildHeader();
   }
 
   parseData(data) {
@@ -46,5 +37,13 @@ export class TableHead {
     for(let key in data) {
       let attr = object[key];
     }
+  }
+
+  _buildHeader() {
+    let headers = '';
+    this.statuses.forEach(status => {
+      headers += this.theadTemplate(status);
+    })
+    this.element.innerHTML = headers;
   }
 }
