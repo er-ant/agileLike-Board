@@ -1,0 +1,93 @@
+$table-borders: #e4e4e4;
+$table-header-background: #eee;
+$table-header-counter-background: #9db9d5;
+$table-header-counter-text: #fff;
+$border-right: #ccc;
+$deal-borders: #d5d5d5;
+$deal-link: rgb(83, 85, 255);
+$deal-overdue: #f77777;
+$deal-unknown: #f7e879;
+$deal-intime: #96f37d;
+
+table.agileLike-board {
+  border: 1px solid $table-borders;
+  border-collapse: collapse;
+  margin-bottom: 4px;
+  table-layout: fixed;
+  width: 100%;
+
+  th {
+    background-color: $table-header-background;
+    border-right: 1px solid $border-right;
+    overflow: hidden;
+    padding: 4px;
+    text-overflow: ellipsis;
+
+    span.count {
+      background-color: $table-header-counter-background;
+      border-radius: 3px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, .5);
+      color: $table-header-counter-text;
+      font-size: 7.5pt;
+      font-weight: bold;
+      left: .3em;
+      margin-left: .1em;
+      padding: 1px 4px;
+      position: relative;
+      top: -.2em;
+    }
+  }
+
+  td {
+    vertical-align: top;
+
+    &.deal-status-col {
+      border-right: 1px solid $border-right;
+
+      .deal {
+        border: solid 1px $deal-borders;
+        cursor: pointer;
+        margin: 5px;
+        padding: 5px;
+        position: relative;
+        text-align: left;
+        white-space: normal;
+        word-wrap: break-word;
+
+        &.overdue {
+          background-color: $deal-overdue;
+        }
+
+        &.unknown {
+          background-color: $deal-unknown;
+        }
+
+        &.intime {
+          background-color: $deal-intime;
+        }
+
+        .deal-header {
+          border-bottom: 1px solid $deal-borders;
+          margin: -5px -5px 5px -5px;
+          padding: 5px;
+          text-align: left;
+
+          .deal-link {
+            color: $deal-link;
+          }
+        }
+
+        .deal-attributes {
+          margin-bottom: 1em;
+          margin-top: .5em;
+        }
+
+        .deal-assigned-manager {
+          margin-bottom: 0px;
+          margin-top: 5px;
+          padding-top: 5px;
+        }
+      }
+    }
+  }
+}

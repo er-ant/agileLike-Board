@@ -10,13 +10,15 @@ export class TableBody {
     return `
       <div class="deal ${this.callStatus(deal)}">
         <p class="deal-header">
-          <a href="/${deal.projLink}" target="_blank"><strong>${deal.projName}</strong></a>
+          <a class="deal-link" href="${deal.projLink}" target="_blank">
+            <strong>${deal.projName}</strong>
+          </a>
         </p>
-        <p class="attributes">
+        <p class="deal-attributes">
           <b>Клиент</b>: ${deal.customer}<br>
           <b>Страна</b>: ${deal.country}<br>
         </p>
-        <p class="assigned-manager">
+        <p class="deal-assigned-manager">
           <b>Менеджер</b>: ${deal.manager}<br>
           <b>В статусе</b>: ${deal.inStatus}<br>
         </p>

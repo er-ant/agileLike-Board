@@ -5,6 +5,7 @@ export class Table {
   constructor(data, statuses) {
     let statusesArray = statuses.split(' ');
     this.element = document.createElement('table');
+    this.element.setAttribute('class', 'agileLike-board');
 
     let tHead = new TableHead(data, statusesArray);
     this.element.appendChild(tHead.element);

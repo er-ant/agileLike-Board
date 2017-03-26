@@ -9,13 +9,11 @@
 
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,700' rel='stylesheet' type='text/css'>
 
-    <link href="styles.css" type="text/css" rel="stylesheet">  <!-- Core CSS with all styles -->
-
     <script src="./dist/bundle.js"></script>
   </head>
 
   <body>
-    <div class="wrapper" id="table-wrapper">
+    <div class="wrapper" id="agileLike-board-wrapper">
       <table>
         <thead>
           <tr>
@@ -51,10 +49,10 @@
         </thead>
         <tbody>
           <tr>
-            <td class="deal-status-col">
-              <div id="deal-number" class="deal overdue">
+            <td id="col-deals" class="deal-status-col" ondrop="table.drop(event)" ondragover="table.allowDrop(event)">
+              <div id="deal-number-1" class="deal overdue" draggable="true" ondragstart="table.drag(event)">
                 <p class="deal-header">
-                  <a href="" target="_blank"><strong>Project name</strong></a> <!-- имя проекта -->
+                  <a href="" target="_blank"><strong>Project name</strong></a>
                 </p>
                 <p class="attributes">
                   <b>Клиент</b>: I. Kasparov<br>
@@ -65,7 +63,32 @@
                   <b>В статусе</b>: 7 часов<br>
                 </p>
               </div>
-              <div class="deal unknown" ondrop="table.drop(event)" ondragover="table.allowDrop(event)">
+              <div id="deal-number-2" class="deal unknown" draggable="true" ondragstart="table.drag(event)">
+                <p class="deal-header">
+                  <a href="" target="_blank"><strong>Project name</strong></a>
+                </p>
+                <p class="attributes">
+                  <b>Клиент</b>: I. Kasparov<br>
+                  <b>Страна</b>: Russian Federation<br>
+                </p>
+                <p class="assigned-manager">
+                  <b>Менеджер</b>: O. Romanenko<br>
+                  <b>В статусе</b>: 7 часов<br>
+                </p>
+              </div>
+            </td>
+            <td id="col-deals" class="deal-status-col" ondrop="table.drop(event)" ondragover="table.allowDrop(event)">
+            </td>
+            <td id="col-deals" class="deal-status-col" ondrop="table.drop(event)" ondragover="table.allowDrop(event)">
+            </td>
+            <td id="col-deals" class="deal-status-col" ondrop="table.drop(event)" ondragover="table.allowDrop(event)">
+            </td>
+            <td id="col-deals" class="deal-status-col" ondrop="table.drop(event)" ondragover="table.allowDrop(event)">
+            </td>
+            <td id="col-deals" class="deal-status-col" ondrop="table.drop(event)" ondragover="table.allowDrop(event)">
+            </td>
+            <td id="col-deals" class="deal-status-col" ondrop="table.drop(event)" ondragover="table.allowDrop(event)">
+              <div id="deal-number-3" class="deal intime" draggable="true" ondragstart="table.drag(event)">
                 <p class="deal-header">
                   <a href="" target="_blank"><strong>Project name</strong></a> <!-- имя проекта -->
                 </p>
@@ -80,31 +103,6 @@
               </div>
             </td>
             <td class="deal-status-col" ondrop="table.drop(event)" ondragover="table.allowDrop(event)">
-            </td>
-            <td class="deal-status-col" ondrop="table.drop(event)" ondragover="table.allowDrop(event)">
-            </td>
-            <td class="deal-status-col">
-            </td>
-            <td class="deal-status-col">
-            </td>
-            <td class="deal-status-col">
-            </td>
-            <td class="deal-status-col">
-              <div class="deal intime">
-                <p class="deal-header">
-                  <a href="" target="_blank"><strong>Project name</strong></a> <!-- имя проекта -->
-                </p>
-                <p class="attributes">
-                  <b>Клиент</b>: I. Kasparov<br>
-                  <b>Страна</b>: Russian Federation<br>
-                </p>
-                <p class="assigned-manager">
-                  <b>Менеджер</b>: O. Romanenko<br>
-                  <b>В статусе</b>: 7 часов<br>
-                </p>
-              </div>
-            </td>
-            <td class="deal-status-col">
             </td>
           </tr>
         </tbody>

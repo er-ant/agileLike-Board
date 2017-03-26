@@ -33,17 +33,13 @@ export class TableHead {
     `;
   }
 
-  parseDataHeader(data) {
-    for(let key in data) {
-      let attr = object[key];
-    }
-  }
-
   _buildHeader() {
     let headers = '';
+
     this.statuses.forEach(status => {
       headers += this.theadTemplate(status);
-    })
+    });
+
     this.element.innerHTML = headers;
   }
 }
