@@ -1,5 +1,6 @@
 export const dataMock = [
   {
+    id: 1,
     projName: 'MoneyMoneyMoney',
     projLink: 'https://www.yandex.ru/',
     customer: 'Olho Voihovski Jr.',
@@ -9,7 +10,8 @@ export const dataMock = [
     inStatus: '7 hours',
     contact: 'tomorrow'
   }, {
-    projName: 'Setting mark up for the agile',
+    id: 2,
+    projName: 'Angular 2 / HTML Frontend for MVP',
     projLink: 'https://www.vk.com/',
     customer: 'Jojo Mogo Toggle',
     country: 'Jamaica',
@@ -18,7 +20,8 @@ export const dataMock = [
     inStatus: '0',
     contact: 'today'
   }, {
-    projName: 'DealerPoint JS update to ES7',
+    id: 3,
+    projName: 'Modify a webpage that uses ReactJS to layout the front end webpage. Currently functional but ugly look.',
     projLink: 'https://learn.javascript.ru/',
     customer: 'Ilya Kantor',
     country: 'Russian Federation',

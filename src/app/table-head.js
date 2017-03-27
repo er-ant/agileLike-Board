@@ -6,7 +6,15 @@ export class TableHead {
 
     this.parseData(data);
 
-    this._buildHeader();
+    this.buildHeader();
+  }
+
+  _theadTemplate(status) {
+    return `
+      <th>${status}
+        <span class="count">${this.data[status]}</span>
+      </th>
+    `;
   }
 
   parseData(data) {
@@ -25,19 +33,11 @@ export class TableHead {
     });
   }
 
-  theadTemplate(status) {
-    return `
-      <th>${status}
-        <span class="count">${this.data[status]}</span>
-      </th>
-    `;
-  }
-
-  _buildHeader() {
+  buildHeader() {
     let headers = '';
 
     this.statuses.forEach(status => {
-      headers += this.theadTemplate(status);
+      headers += this._theadTemplate(status);
     });
 
     this.element.innerHTML = headers;

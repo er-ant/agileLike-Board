@@ -9,19 +9,21 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 export function allowDrop(ev) {
-  // console.log(ev.target);
+  // console.log('allow');
   ev.preventDefault();
 }
 
 export function drag(ev) {
-  console.log('ev.target');
+  // console.log('ev.target');
   ev.dataTransfer.setData('text', ev.target.id);
 }
 
 export function drop(ev) {
+  // console.log('drop');
   ev.preventDefault();
   var data = ev.dataTransfer.getData('text');
   if(ev.target) {
+    console.log(document.getElementById(data));
     ev.target.appendChild(document.getElementById(data));
   }
 }
