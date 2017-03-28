@@ -1,17 +1,22 @@
 export class TableBody {
   constructor(data, statuses) {
-    this.element = document.createElement('tbody');
+    this.idElement = 'body-board';
     this.statuses = statuses;
+    this.data = data;
+
+    this.element = document.createElement('tbody');
+    this.element.setAttribute('id', this.idElement);
 
     this.buildBody(data);
   }
 
   _tDealTemplate(deal) {
     return `
-      <div id="deal-${deal.id}" class="deal ${this._callStatus(deal)}" draggable="true" ondragstart="table.drag(event)">
+      <div id="${deal.id}" class="deal ${this._dealStatus(deal)}"
+        drag="true">
         <p class="deal-header">
           <a class="deal-link" href="${deal.projLink}" target="_blank">
-            <strong>${this._dealNameShorter(deal.projName)}</strong>
+            <strong>${this._dealNameShorter(deal.potentialname)}</strong>
           </a>
         </p>
         <p class="deal-attributes">
@@ -26,7 +31,10 @@ export class TableBody {
     `;
   }
 
-  _callStatus(deal) {
+
+  // TODO
+  // Solve about colors for deals
+  _dealStatus(deal) {
     if (deal.contact === 'tomorrow') {
       return 'intime';
     }
@@ -51,14 +59,14 @@ export class TableBody {
     this.statuses.forEach(item => {
       cells[item] = document.createElement('td');
       cells[item].setAttribute('class', 'deal-status-col');
-      cells[item].setAttribute('ondrop', 'table.drop(event)');
-      cells[item].setAttribute('ondragover', 'table.allowDrop(event)');
+      cells[item].setAttribute('id', item);
+      cells[item].setAttribute('drop', 'true');
     });
 
     data.forEach(deal => {
       let divContainer = document.createElement('div');
       divContainer.innerHTML = this._tDealTemplate(deal);
-      cells[deal.status].appendChild(divContainer.childNodes[1]);
+      cells[deal.sales_stage].appendChild(divContainer.childNodes[1]);
     });
 
     Object.keys(cells).forEach(objectKey => {
@@ -67,5 +75,24 @@ export class TableBody {
     });
 
     this.element.appendChild(row);
+  }
+
+  refreshDealStatus(movedDeal) {
+    this.data = this.data.map(item => {
+      if (item.id === movedDeal.id) {
+        item.sales_stage = movedDeal.status;
+      }
+      return item;
+    });
+
+    this.refreshTable(this.data);
+  }
+
+  refreshTable(data) {
+    let elem = document.getElementById(this.idElement);
+    elem.parentNode.removeChild(elem);
+    this.element = document.createElement('tbody');
+    this.element.setAttribute('id', this.idElement);
+    this.buildBody(data);
   }
 }

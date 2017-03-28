@@ -1,29 +1,19 @@
 import { dataMock, statuses } from './data';
 import { Table } from './app/table';
+import { DragAndDrop } from './app/drag-and-drop';
 
 import './assets/styles.scss';
 
-document.addEventListener('DOMContentLoaded', () => {
-  let table = new Table(dataMock, statuses);
-  document.getElementById('agileLike-board-wrapper').appendChild(table.element);
-});
+export function init(incomingStatuses, data) {
+  document.addEventListener('DOMContentLoaded', () => {
+    let deals = data || dataMock;
+    let dealsStatuses = incomingStatuses || statuses;
+    let table = new Table(deals, dealsStatuses);
+    let dragAndDrop = new DragAndDrop(table);
 
-export function allowDrop(ev) {
-  // console.log('allow');
-  ev.preventDefault();
+    document.getElementById('agileLike-board-wrapper').appendChild(table.element);
+
+    dragAndDrop.init();
+  });
 }
 
-export function drag(ev) {
-  // console.log('ev.target');
-  ev.dataTransfer.setData('text', ev.target.id);
-}
-
-export function drop(ev) {
-  // console.log('drop');
-  ev.preventDefault();
-  var data = ev.dataTransfer.getData('text');
-  if(ev.target) {
-    console.log(document.getElementById(data));
-    ev.target.appendChild(document.getElementById(data));
-  }
-}

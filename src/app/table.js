@@ -7,10 +7,10 @@ export class Table {
     this.element = document.createElement('table');
     this.element.setAttribute('class', 'agileLike-board');
 
-    let tHead = new TableHead(data, statusesArray);
-    this.element.appendChild(tHead.element);
+    this.tHead = new TableHead(data, statusesArray);
+    this.element.appendChild(this.tHead.element);
 
-    let tBody = new TableBody(data, statusesArray);
-    this.element.appendChild(tBody.element);
+    this.tBody = new TableBody(data, statusesArray);
+    this.element.appendChild(this.tBody.element);
   }
 }

@@ -44,7 +44,5 @@ module.exports = {
     new styleLintPlugin({
       configFile: ".stylelintrc.json"
     }),
-  ],
-
-  devtool: 'inline-source-map'
+  ]
 }
