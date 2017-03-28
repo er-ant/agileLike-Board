@@ -12,7 +12,7 @@ export class TableBody {
 
   _tDealTemplate(deal) {
     return `
-      <div id="${deal.id}" class="deal ${this._dealStatus(deal)}"
+      <div id="${deal.id}" class="deal ${this._callStatus(deal)}"
         drag="true">
         <p class="deal-header">
           <a class="deal-link" href="${deal.projLink}" target="_blank">
@@ -31,10 +31,7 @@ export class TableBody {
     `;
   }
 
-
-  // TODO
-  // Solve about colors for deals
-  _dealStatus(deal) {
+  _callStatus(deal) {
     if (deal.contact === 'tomorrow') {
       return 'intime';
     }
