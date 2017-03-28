@@ -21,4 +21,4 @@ Start index.html to check demo version after project will be built.
 ```
 ### Methods:
 
-- `init(?incomingStatuses, ?data)`: Init a table. Without params will init with data mock.
+- `init(incomingStatuses, data)`: Init a table. Without params will init with data mock.
