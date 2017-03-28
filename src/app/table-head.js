@@ -24,7 +24,7 @@ export class TableHead {
       count = 0;
 
       data.forEach(deal => {
-        if(deal.status == status) {
+        if (deal.status === status) {
           count++;
         }
       });

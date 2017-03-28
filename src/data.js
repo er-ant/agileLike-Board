@@ -21,7 +21,8 @@ export const dataMock = [
     contact: 'today'
   }, {
     id: 3,
-    projName: 'Modify a webpage that uses ReactJS to layout the front end webpage. Currently functional but ugly look.',
+    projName: 'Modify a webpage that uses ReactJS to layout the front end' +
+      ' webpage. Currently functional but ugly look.',
     projLink: 'https://learn.javascript.ru/',
     customer: 'Ilya Kantor',
     country: 'Russian Federation',

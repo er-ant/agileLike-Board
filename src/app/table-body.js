@@ -27,15 +27,15 @@ export class TableBody {
   }
 
   _callStatus(deal) {
-    if(deal.contact == 'tomorrow') {
+    if (deal.contact === 'tomorrow') {
       return 'intime';
-    } else {
-      return 'overdue';
     }
+
+    return 'overdue';
   }
 
   _dealNameShorter(name) {
-    if(name.length > 85) {
+    if (name.length > 85) {
       name = name.slice(0, 90);
       name = name.slice(0, name.lastIndexOf(' '));
       name += '...';
@@ -61,12 +61,11 @@ export class TableBody {
       cells[deal.status].appendChild(divContainer.childNodes[1]);
     });
 
-    Object.keys(cells).map((objectKey, index) => {
+    Object.keys(cells).forEach(objectKey => {
       let value = cells[objectKey];
       row.appendChild(value);
     });
 
     this.element.appendChild(row);
   }
-
 }
